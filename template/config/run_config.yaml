@@ -1,0 +1,14 @@
+modelName: "sphere"
+nContrib: 300 #粒子贡献的数量，常见值：100-500。值应略多于预期分布中能分辨的“峰”的数量。如果分布很宽或包含多个峰，可以适当增加 nContrib
+modelDType: "default" #模型数据类型，保持默认
+fitParameterLimits: #拟合参数范围
+  radius: #'auto' # 拟合半径范围，'auto'根据Q范围自动计算区间
+     - 1
+     - 100
+staticParameters:
+  sld: 33.4 # 散射长度密度，单位：10⁻⁶ Å⁻²。粒子≈33.4×10⁻⁶ Å⁻²，
+  sld_solvent: 9.4 #溶剂≈9.4×10⁻⁶ Å⁻²
+maxIter: 100000  #单次蒙特卡洛优化的最大迭代步数
+convCrit: 1      #收敛判据: 拟合优度χ²的阈值，小于此阈值时已收敛。范围0-10，默认1
+nRep: 2        #独立重复运行的次数，测试时2-10，发表建议50-100
+nCores: 5        #并行计算使用的CPU核心数，范围4-8

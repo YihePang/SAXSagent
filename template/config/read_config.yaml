@@ -1,0 +1,13 @@
+--- # configuration used to read files into McSAS3. this is assumed to be a 1D file in csv format
+# Note that the units are assumed to be 1/(m sr) for I and 1/nm for Q
+nbins: 100  #原始数据重新划分为多少个数据点，一般50-200，如果原始数据非常平稳，可减少到50提高速度；若数据波动剧烈，可增加到200保留细节
+dataRange: #指定用于分析的Q值范围
+  - 0.0 # minimum
+  - .inf # maximum. （.inf为正无穷，也可以根据数据噪声水平设置上界）
+csvargs:
+  sep: "\t" #数据列之间的分隔符，常见值："\\t" (制表符)； " " (空格)；  "," (逗号)；"\\s+" (正则，匹配任意空白)
+  header: null # 指定数据文件中标题行的位置。常见值：null (无标题行)、0 (第一行为列名)
+  names: # 当 header: null 时，用于手动指定数据列的列名。主要是调整顺序
+    - "Q"
+    - "I"
+    - "ISigma"
