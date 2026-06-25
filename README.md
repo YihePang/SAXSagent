@@ -373,3 +373,5 @@ This project is provided for academic and research use. McSAS3 is developed by t
 <p align="center">
   <sub>Built with <a href="https://claude.ai/code">Claude Code</a> — an AI agent for SAXS data analysis</sub>
 </p>
+
+![](https://komarev.com/ghpvc/?username=YihePang&abbreviated=true&base=3592&label=Repository_visits:)
